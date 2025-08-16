@@ -54,15 +54,16 @@
       .brand .title { font-weight: 700; letter-spacing: .02em; }
       .links { display: flex; align-items: center; gap: 12px; }
 
-      .btn { display: inline-block; padding: 12px 18px; border-radius: 10px; font-weight: 700; }
+      .btn { display: inline-block; padding: 12px 18px; border-radius: 12px; font-weight: 700; }
       .btn.primary { background: var(--brand); color: #fff; box-shadow: 0 6px 16px rgba(16,100,102,.25); }
       .btn.ghost { color: var(--brand); border: 1px solid #cfe5e2; background: #fff; }
       .btn:hover { opacity: .95; transform: translateY(-1px); transition: .2s ease; }
+      .btn.block { display: flex; justify-content: center; width: 100%; }
 
       /* Hero (full-bleed) */
       .hero { position: relative; min-height: 60vh; display: flex; align-items: end; color: #fff; }
       .hero::before { content: ""; position: absolute; inset: 0; background: url('./フリースクール12_0.jpg') center/cover no-repeat; filter: saturate(1.05); }
-      .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.6) 100%); }
+      .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.65) 100%); }
       .hero-inner { position: relative; z-index: 1; width: 100%; }
       .hero .container { padding-left: 48px; padding-right: 24px; }
       .hero-content { padding: 56px 0 28px; max-width: 820px; }
@@ -93,10 +94,16 @@
       .footer a { color: #b7fff6; }
       .footer small { color: #a9c8c5; }
 
+      /* Mobile fixed CTA */
+      .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-top: 1px solid #e6ecea; padding: 10px 12px; display: none; }
+      .mobile-cta .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      body.has-mobile-cta { padding-bottom: 74px; }
+
       @media (max-width: 900px) {
         .hero-inner { grid-template-columns: 1fr; }
         .cards { grid-template-columns: 1fr; }
         .hero .container { padding-left: 16px; padding-right: 16px; }
+        .mobile-cta { display: block; }
       }
     </style>
 
@@ -121,8 +128,8 @@
           <span class="title">トモダチサンガ PROJECT</span>
         </a>
         <nav class="links">
-          <a class="btn ghost" href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINE</a>
           <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">支援する</a>
+          <a class="btn ghost" href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINE</a>
         </nav>
       </div>
     </header>
@@ -247,13 +254,29 @@
 
     <footer class="footer">
       <div class="container">
-        <p><strong>トモダチサンガ PROJECT</strong></p>
-        <p class="muted">お問い合わせ：
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">Googleフォーム</a>
-          ／ <a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINE</a>
-        </p>
-        <small>© トモダチサンガ PROJECT</small>
+        <p>お問い合わせ：<a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINE公式</a> / <a href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">支援フォーム</a></p>
+        <small>&copy; 2025 トモダチサンガ PROJECT</small>
       </div>
     </footer>
+
+    <!-- Mobile fixed CTA -->
+    <div class="mobile-cta" role="region" aria-label="固定CTA">
+      <div class="container">
+        <div class="row">
+          <a class="btn primary btn-lg block" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">今すぐ支援する</a>
+          <a class="btn ghost btn-lg block" href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      (function() {
+        const mq = window.matchMedia('(max-width: 900px)');
+        const body = document.body;
+        const update = () => { body.classList.toggle('has-mobile-cta', mq.matches); };
+        mq.addEventListener ? mq.addEventListener('change', update) : mq.addListener(update);
+        update();
+      })();
+    </script>
   </body>
 </html>
