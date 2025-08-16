@@ -10,6 +10,10 @@
     />
     <meta name="robots" content="index,follow" />
     <meta name="theme-color" content="#106466" />
+    <!-- Fonts: Noto Serif JP (Mincho) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&display=swap" rel="stylesheet">
 
     <!-- Open Graph -->
     <meta property="og:title" content="トモダチサンガ PROJECT - インドの子どもたちに安心できる学びの環境を" />
@@ -37,10 +41,7 @@
       }
       * { box-sizing: border-box; }
       html, body { height: 100%; }
-      body {
-        margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        color: var(--text); background: var(--bg); line-height: 1.6;
-      }
+      body { margin: 0; background: var(--bg); color: var(--text); font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', serif; font-feature-settings: 'palt' 1; }
       a { color: var(--brand); text-decoration: none; }
       img { max-width: 100%; height: auto; }
 
@@ -63,6 +64,7 @@
       .hero::before { content: ""; position: absolute; inset: 0; background: url('./フリースクール12_0.jpg') center/cover no-repeat; filter: saturate(1.05); }
       .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.6) 100%); }
       .hero-inner { position: relative; z-index: 1; width: 100%; }
+      .hero .container { padding-left: 48px; padding-right: 24px; }
       .hero-content { padding: 56px 0 28px; max-width: 820px; }
       .eyebrow { display: inline-block; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); padding: 6px 10px; border-radius: 999px; font-size: 12px; letter-spacing: .08em; }
       .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; margin: 12px 0 10px; font-weight: 800; letter-spacing: .01em; }
@@ -78,9 +80,9 @@
       .card h3 { margin: 0 0 8px; font-size: 18px; }
       .muted { color: var(--muted); }
       /* Featured plan styles */
-      .card.featured { border-color: var(--brand); box-shadow: 0 8px 22px rgba(16,100,102,.18); position: relative; background: #ffffff; }
+      .card.featured { border: 2px solid var(--brand); box-shadow: 0 10px 26px rgba(16,100,102,.18); position: relative; background: linear-gradient(180deg, #ffffff 0%, #f7fbfb 100%); }
       .card.featured h3 { font-size: 20px; }
-      .card .badge { position: absolute; top: 12px; right: 12px; background: var(--brand); color: #fff; font-weight: 700; font-size: 11px; padding: 4px 8px; border-radius: 999px; letter-spacing: .02em; }
+      .card.featured::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 0% 0%, rgba(16,100,102,.08), transparent 60%); pointer-events: none; }
       .card .price { font-weight: 800; font-size: 20px; color: var(--text); }
       .card .sub { font-size: 12px; color: var(--muted); }
       .card:hover { box-shadow: 0 10px 26px rgba(16,100,102,.12); transform: translateY(-2px); transition: .2s ease; }
@@ -94,6 +96,7 @@
       @media (max-width: 900px) {
         .hero-inner { grid-template-columns: 1fr; }
         .cards { grid-template-columns: 1fr; }
+        .hero .container { padding-left: 16px; padding-right: 16px; }
       }
     </style>
 
@@ -147,9 +150,12 @@
 
       <section>
         <div class="container">
-          <h2 class="section-title">なぜ今、トイレ建設が必要か</h2>
+          <h2 class="section-title">インドの学校にトイレを作りたい</h2>
           <p class="muted">
-            現在、学校には適切なトイレ設備がなく、不衛生な環境は特に女子生徒の就学継続に影響しています。プライバシーと衛生を守ることは、教育機会の確保に直結します。
+            インドで階級による差別に苦しむ”ダリット”の子どもたちは、生まれながらに教育や医療すら届かない現実に直面します。その上、彼らが通う学校にはトイレがありません。そのため、生徒たちは人目を気にして用を足すしかなく、それが故に女子生徒が強姦の被害に遭うという深刻な問題が発生しています。
+          </p>
+          <p class="muted">
+            もしも、彼らが”学び”を受けることができたら、彼らは自らの力で未来を切り拓くことができる。だからこそ、まずは安心して学べる”当たり前”の環境を作りたい。その思いから、このプロジェクトを立ち上げました。どうか皆様の温かいご支援をお待ちしています。
           </p>
         </div>
       </section>
@@ -191,14 +197,12 @@
           <h2 class="section-title">ご支援プラン</h2>
           <div class="cards">
             <div class="card featured">
-              <span class="badge">おすすめ</span>
               <h3>トイレ入口壁面に名前や社名を刻む</h3>
               <p class="price">20万円 <span class="sub">（1口・限定2枠）</span></p>
               <p class="muted">サイズ：<span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
             <div class="card featured">
-              <span class="badge">人気</span>
               <h3>個室の壁面に名前や社名を刻む</h3>
               <p class="price">10万円 <span class="sub">（1口・限定6枠）</span></p>
               <p class="muted">サイズ：<span class="nowrap">30.48cm × 45.72cm</span></p>
