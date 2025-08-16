@@ -117,23 +117,26 @@
       body.has-mobile-cta { padding-bottom: 74px; }
 
       /* Support plans (premium cards) */
-      .support-plans .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; justify-items: center; }
-      .support-plans .plan { position: relative; padding: 22px; border: 1px solid transparent; text-align: center; background:
-        linear-gradient(180deg, #ffffff, #f6f6f7) padding-box,
-        linear-gradient(180deg, rgba(212,180,117,.70), rgba(212,180,117,.32)) border-box; /* emphasized gold border */
-        box-shadow: 0 12px 28px rgba(15,23,42,.10);
+      .support-plans .plans-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; justify-items: stretch; align-items: stretch; }
+      .support-plans .plan { position: relative; padding: 22px; border: 1px solid #ece7d6; text-align: center; display: flex; flex-direction: column; background:
+        linear-gradient(180deg, #ffffff 0%, #f6f6f7 100%);
+        box-shadow: 0 10px 22px rgba(15,23,42,.10);
       }
-      .support-plans .plan.featured { background:
-        linear-gradient(180deg, #ffffff 0%, #f3efe6 100%) padding-box,
-        linear-gradient(180deg, rgba(224,190,120,.90), rgba(224,190,120,.45)) border-box; /* stronger warm gold */
-        box-shadow: 0 18px 38px rgba(15,23,42,.14);
+      .support-plans .plan.featured { border: 2px solid var(--brand); background:
+        linear-gradient(180deg, #ffffff 0%, #f7f2e6 100%);
+        box-shadow: 0 10px 24px rgba(15,23,42,.10); /* neutral shadow drops to background */
       }
+      /* left-aligned info card */
+      .support-plans .plan.info { text-align: left; }
+      .support-plans .plan.info h3 { margin-bottom: 12px; }
+      .support-plans .plan.info p { margin: 4px 0; }
       .support-plans .plan h3 { margin: 0 0 10px; font-size: 19px; }
       .support-plans .plan .price { font-weight: 900; font-size: clamp(24px, 3.2vw, 32px); line-height: 1.15; color: var(--text); }
       .support-plans .plan .sub { font-size: 12px; color: var(--muted); }
       .support-plans .note { color: var(--muted); }
-      .support-plans .plan p:last-child { display: flex; justify-content: center; }
-      .support-plans .plan:hover { box-shadow: 0 16px 36px rgba(15,23,42,.14); transform: translateY(-2px); transition: .25s ease; }
+      .support-plans .plan p:last-child { margin-top: auto; display: flex; justify-content: center; }
+      .support-plans .plan:hover { box-shadow: 0 18px 40px rgba(15,23,42,.14); transform: translateY(-2px); transition: .25s ease; }
+      @media (max-width: 1200px) { .support-plans .plans-grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 900px) { .support-plans .plans-grid { grid-template-columns: 1fr; } }
 
       @media (max-width: 900px) {
@@ -142,6 +145,10 @@
         .hero .container { padding-left: 16px; padding-right: 16px; }
         .mobile-cta { display: block; }
         .concept-grid { grid-template-columns: 1fr; }
+        .hero { min-height: 52vh; }
+        .support-plans .plan { padding: 18px; width: 100%; max-width: 560px; margin-left: auto; margin-right: auto; }
+        .support-plans .plan .price { font-size: clamp(22px, 6vw, 28px); }
+        .support-plans .plan p:last-child .btn { width: 100%; }
       }
       @media (max-width: 520px) { .concept-copy { padding: 16px; } }
     </style>
@@ -268,19 +275,18 @@
               <p class="muted">サイズ：<span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
-            
+            <div class="plan info">
+              <h3>共通特典</h3>
+              <div class="muted" style="margin:6px 0 0 0;">
+                <p>①HPに名前掲載</p>
+                <p>②活動報告書PDF</p>
+                <p>③サンクスカード</p>
+                <p>※協賛される方は個人・法人どちらでも結構です。</p>
+                <p>※1口に対して複数名でのご協賛も可能です。</p>
+              </div>
+            </div>
           </div>
-          <p class="note" style="margin-top:8px">上記以外にも、クラウドファンディングのプランをご用意しています。詳細は <a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEでお気軽にご相談</a> ください。</p>
-          <div class="plan" style="margin-top:16px">
-            <h3>共通特典・注意事項</h3>
-            <ul class="muted" style="margin:8px 0 0 18px;">
-              <li>共通：①HPに名前掲載 ②活動報告書PDF ③サンクスカード</li>
-              <li>法人、個人は問いません。</li>
-              <li>1口に対して複数名でのご協賛も可能です。</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+          <p class="note" style="margin-top:8px">上記以外にも、<strong>少額の</strong>クラウドファンディングのプランをご用意しています。詳細は <a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEでもお気軽にご相談</a> ください。</p>
 
       <section>
         <div class="container">
