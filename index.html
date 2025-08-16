@@ -94,16 +94,6 @@
       .footer a { color: #b7fff6; }
       .footer small { color: #a9c8c5; }
 
-      /* Split sections (text-image alternating) */
-      .split { padding: 48px 0; background: linear-gradient(180deg, #f7faf9 0%, #ffffff 100%); }
-      .split .grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 28px; align-items: center; }
-      .split.reverse .grid { grid-template-columns: .95fr 1.05fr; }
-      .split .kicker { font-size: 12px; letter-spacing: .12em; color: var(--brand); margin-bottom: 6px; }
-      .split h3 { margin: 0 0 10px; font-size: 22px; }
-      .split p { margin: 0 0 12px; color: var(--muted); }
-      .media { aspect-ratio: 16/10; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 26px rgba(15, 23, 42, .08); border: 1px solid #e6ecea; }
-      .media img { width: 100%; height: 100%; object-fit: cover; display: block; }
-      @media (max-width: 900px) { .split .grid { grid-template-columns: 1fr; } }
 
       /* Mobile fixed CTA */
       .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-top: 1px solid #e6ecea; padding: 10px 12px; display: none; }
@@ -166,45 +156,7 @@
         </div>
       </section>
 
-      <!-- Alternating text-image sections -->
-      <section class="split">
-        <div class="container grid">
-          <div>
-            <div class="kicker">子どもたちの今</div>
-            <h3>学びたい気持ちに、環境が追いついていない</h3>
-            <p>差別や貧困により、文具すら手に入りにくい地域があります。それでも子どもたちは真剣な眼差しで学びに向き合っています。まずは“安心して通える学校”の整備から。</p>
-          </div>
-          <div class="media">
-            <img src="./7FCDE4D7-1F76-4BA3-AD2F-CE882ADF64B5.jpg" alt="真剣に授業を受ける子どもたち" />
-          </div>
-        </div>
-      </section>
 
-      <section class="split reverse">
-        <div class="container grid">
-          <div class="media">
-            <img src="./IMG_1648.jpeg" alt="教室で学ぶ子どもたちの様子" />
-          </div>
-          <div>
-            <div class="kicker">トイレのない学校</div>
-            <h3>“夜まで我慢”を終わらせるために</h3>
-            <p>学校にトイレがないため、女子生徒は人目のない時間まで我慢を強いられています。男女別の安全なトイレは、学びを継続するための最低限のインフラです。</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="split">
-        <div class="container grid">
-          <div>
-            <div class="kicker">支援のインパクト</div>
-            <h3>一口のご支援が、日常の“安心”を増やす</h3>
-            <p>トイレの整備は衛生だけでなく、尊厳と自信を守ります。子どもたちが笑顔で学べる時間を、あなたの一口から。</p>
-          </div>
-          <div class="media">
-            <img src="./image.png" alt="プロジェクトのシンボルイメージ" />
-          </div>
-        </div>
-      </section>
 
       <section>
         <div class="container">
