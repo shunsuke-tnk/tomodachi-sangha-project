@@ -58,24 +58,34 @@
       .btn.ghost { color: var(--brand); border: 1px solid #cfe5e2; background: #fff; }
       .btn:hover { opacity: .95; transform: translateY(-1px); transition: .2s ease; }
 
-      .hero { padding: 56px 0 28px; }
-      .hero-inner { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: center; }
-      .hero h1 { font-size: clamp(28px, 4.2vw, 44px); line-height: 1.2; margin: 6px 0 10px; }
-      .hero p { font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); margin: 0 0 18px; }
+      /* Hero (full-bleed) */
+      .hero { position: relative; min-height: 60vh; display: flex; align-items: end; color: #fff; }
+      .hero::before { content: ""; position: absolute; inset: 0; background: url('./フリースクール12_0.jpg') center/cover no-repeat; filter: saturate(1.05); }
+      .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,.45) 60%, rgba(0,0,0,.6) 100%); }
+      .hero-inner { position: relative; z-index: 1; width: 100%; }
+      .hero-content { padding: 56px 0 28px; max-width: 820px; }
+      .eyebrow { display: inline-block; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); padding: 6px 10px; border-radius: 999px; font-size: 12px; letter-spacing: .08em; }
+      .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; margin: 12px 0 10px; font-weight: 800; letter-spacing: .01em; }
+      .hero p { font-size: clamp(16px, 2.2vw, 18px); color: #e8f6f4; margin: 0 0 18px; }
       .hero-cta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
-      .hero .note { font-size: 13px; color: var(--muted); }
+      .btn.btn-lg { padding: 14px 22px; font-size: 16px; }
+      .hero .note { font-size: 13px; color: #d4ebe8; }
 
       section { padding: 36px 0; }
       .section-title { font-size: 22px; margin: 0 0 12px; }
       .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-      .card { background: var(--card); border: 1px solid #e6ecea; border-radius: 12px; padding: 18px; }
+      .card { background: var(--card); border: 1px solid #e6ecea; border-radius: 12px; padding: 18px; position: relative; overflow: hidden; }
       .card h3 { margin: 0 0 8px; font-size: 18px; }
       .muted { color: var(--muted); }
       /* Featured plan styles */
       .card.featured { border-color: var(--brand); box-shadow: 0 8px 22px rgba(16,100,102,.18); position: relative; background: #ffffff; }
       .card.featured h3 { font-size: 20px; }
       .card .badge { position: absolute; top: 12px; right: 12px; background: var(--brand); color: #fff; font-weight: 700; font-size: 11px; padding: 4px 8px; border-radius: 999px; letter-spacing: .02em; }
+      .card .price { font-weight: 800; font-size: 20px; color: var(--text); }
+      .card .sub { font-size: 12px; color: var(--muted); }
+      .card:hover { box-shadow: 0 10px 26px rgba(16,100,102,.12); transform: translateY(-2px); transition: .2s ease; }
       .nowrap { white-space: nowrap; }
+      .placeholder { height: 140px; background: repeating-linear-gradient(45deg, #eef7f5, #eef7f5 10px, #e3efec 10px, #e3efec 20px); border-radius: 8px; margin: -6px -6px 12px; border: 1px dashed #cfe5e2; }
 
       .footer { background: #0f2526; color: #e6f3f1; padding: 24px 0; }
       .footer a { color: #b7fff6; }
@@ -117,19 +127,20 @@
     <main id="top">
       <section class="hero">
         <div class="container hero-inner">
-          <div>
-            <h1>インドの子どもたちに、安心できる学びの環境を。</h1>
+          <div class="hero-content">
+            <span class="eyebrow">R.Julius Free School 衛生環境整備</span>
+            <h1>
+              インドの子どもたちに、<br />
+              安心できる学びの環境を。
+            </h1>
             <p>
-              「R.Julius Free School」に男女別トイレを建設し、子どもたちの健康と尊厳、そして学び続ける機会を守ります。あなたのご支援が未来をひらきます。
+              男女別トイレを建設し、健康と尊厳、そして学び続ける機会を守ります。あなたのご支援が未来をひらきます。
             </p>
             <div class="hero-cta">
-              <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">支援する</a>
-              <a class="btn ghost" href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+              <a class="btn primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">支援する</a>
+              <a class="btn ghost btn-lg" href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEで相談</a>
             </div>
-            <p class="note">プロジェクトの透明性と進捗は随時ご報告します。</p>
-          </div>
-          <div>
-            <img src="./フリースクール12_0.jpg" alt="学校の様子" />
+            <p class="note">透明性の高い運用で、進捗・収支をご報告します。</p>
           </div>
         </div>
       </section>
@@ -140,6 +151,18 @@
           <p class="muted">
             現在、学校には適切なトイレ設備がなく、不衛生な環境は特に女子生徒の就学継続に影響しています。プライバシーと衛生を守ることは、教育機会の確保に直結します。
           </p>
+        </div>
+      </section>
+
+      <!-- Trust strip / placeholders for logos or images -->
+      <section>
+        <div class="container">
+          <div class="cards" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="placeholder" aria-hidden="true"></div>
+            <div class="placeholder" aria-hidden="true"></div>
+            <div class="placeholder" aria-hidden="true"></div>
+            <div class="placeholder" aria-hidden="true"></div>
+          </div>
         </div>
       </section>
 
@@ -170,28 +193,32 @@
             <div class="card featured">
               <span class="badge">おすすめ</span>
               <h3>トイレ入口壁面に名前や社名を刻む</h3>
-              <p class="muted">1口：20万円（限定2枠）／ <span class="nowrap">30.48cm × 45.72cm</span></p>
+              <p class="price">20万円 <span class="sub">（1口・限定2枠）</span></p>
+              <p class="muted">サイズ：<span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
             <div class="card featured">
               <span class="badge">人気</span>
               <h3>個室の壁面に名前や社名を刻む</h3>
-              <p class="muted">1口：10万円（限定6枠）／ <span class="nowrap">30.48cm × 45.72cm</span></p>
+              <p class="price">10万円 <span class="sub">（1口・限定6枠）</span></p>
+              <p class="muted">サイズ：<span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
             <div class="card">
               <h3>トイレの壁面に名前を刻む</h3>
-              <p class="muted">1口：3万円（限定50枠）／ <span class="nowrap">5.0cm × 9.0cm</span>（4文字まで）</p>
+              <p class="price">3万円 <span class="sub">（1口・限定50枠）</span></p>
+              <p class="muted">サイズ：<span class="nowrap">5.0cm × 9.0cm</span>（4文字まで）</p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
           </div>
           <div class="cards" style="margin-top:16px">
             <div class="card" style="grid-column: 1 / -1;">
               <h3>ジュリアス教育財団のHPに名前を掲載</h3>
-              <p class="muted">1口：1,000円（制限なし）</p>
+              <p class="price">1,000円 <span class="sub">（1口・制限なし）</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
           </div>
+          <p class="muted" style="margin-top:8px">迷ったらお気軽に <a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEで相談</a> ください。</p>
           <div class="card" style="margin-top:16px">
             <h3>共通特典・注意事項</h3>
             <ul class="muted" style="margin:8px 0 0 18px;">
