@@ -49,7 +49,7 @@
 
       .container { width: min(1100px, 92%); margin: 0 auto; }
 
-      header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid #e6ecea; }
+      header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,0.9); backdrop-filter: blur(8px); border-bottom: 1px solid #e7e1cf; }
       .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
       .brand { display: flex; align-items: center; gap: 12px; }
       .brand img { width: 40px; height: 40px; border-radius: 0; object-fit: cover; }
@@ -72,10 +72,10 @@
       .hero-content { padding: 56px 0 28px; max-width: 820px; }
       .eyebrow { display: inline-block; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); padding: 6px 10px; border-radius: 0; font-size: 12px; letter-spacing: .08em; }
       .hero h1 { font-size: clamp(36px, 6vw, 64px); line-height: 1.05; margin: 12px 0 10px; font-weight: 800; letter-spacing: .01em; }
-      .hero p { font-size: clamp(16px, 2.2vw, 18px); color: #e8f6f4; margin: 0 0 18px; }
+      .hero p { font-size: clamp(16px, 2.2vw, 18px); color: rgba(255,255,255,.9); margin: 0 0 18px; }
       .hero-cta { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
       .btn.btn-lg { padding: 14px 22px; font-size: 16px; }
-      .hero .note { font-size: 13px; color: #d4ebe8; }
+      .hero .note { font-size: 13px; color: rgba(255,255,255,.78); }
 
       section { padding: 36px 0; }
       .section-title { font-size: 22px; margin: 0 0 12px; }
@@ -112,13 +112,13 @@
 
 
       /* Mobile fixed CTA */
-      .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-top: 1px solid #e6ecea; padding: 10px 12px; display: none; }
+      .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-top: 1px solid #e7e1cf; padding: 10px 12px; display: none; }
       .mobile-cta .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
       body.has-mobile-cta { padding-bottom: 74px; }
 
       /* Support plans (premium cards) */
-      .support-plans .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-      .support-plans .plan { position: relative; padding: 22px; border: 1px solid transparent; background:
+      .support-plans .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; justify-items: center; }
+      .support-plans .plan { position: relative; padding: 22px; border: 1px solid transparent; text-align: center; background:
         linear-gradient(180deg, #ffffff, #f6f6f7) padding-box,
         linear-gradient(180deg, rgba(212,180,117,.70), rgba(212,180,117,.32)) border-box; /* emphasized gold border */
         box-shadow: 0 12px 28px rgba(15,23,42,.10);
@@ -128,8 +128,8 @@
         linear-gradient(180deg, rgba(224,190,120,.90), rgba(224,190,120,.45)) border-box; /* stronger warm gold */
         box-shadow: 0 18px 38px rgba(15,23,42,.14);
       }
-      .support-plans .plan h3 { margin: 0 0 8px; font-size: 18px; }
-      .support-plans .plan .price { font-weight: 800; font-size: 20px; color: var(--text); }
+      .support-plans .plan h3 { margin: 0 0 10px; font-size: 19px; }
+      .support-plans .plan .price { font-weight: 900; font-size: clamp(24px, 3.2vw, 32px); line-height: 1.15; color: var(--text); }
       .support-plans .plan .sub { font-size: 12px; color: var(--muted); }
       .support-plans .note { color: var(--muted); }
       .support-plans .plan p:last-child { display: flex; justify-content: center; }
@@ -268,19 +268,9 @@
               <p class="muted">サイズ：<span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
-            <div class="plan">
-              <h3>トイレの壁面に名前を刻む</h3>
-              <p class="price">3万円 <span class="sub">（1口・限定50枠）</span></p>
-              <p class="muted">サイズ：<span class="nowrap">5.0cm × 9.0cm</span>（4文字まで）</p>
-              <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
-            </div>
-            <div class="plan">
-              <h3>ジュリアス教育財団のHPに名前を掲載</h3>
-              <p class="price">1,000円 <span class="sub">（1口・制限なし）</span></p>
-              <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
-            </div>
+            
           </div>
-          <p class="note" style="margin-top:8px">迷ったらお気軽に <a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEで相談</a> ください。</p>
+          <p class="note" style="margin-top:8px">上記以外にも、クラウドファンディングのプランをご用意しています。詳細は <a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEでお気軽にご相談</a> ください。</p>
           <div class="plan" style="margin-top:16px">
             <h3>共通特典・注意事項</h3>
             <ul class="muted" style="margin:8px 0 0 18px;">
