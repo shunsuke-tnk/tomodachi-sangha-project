@@ -94,6 +94,11 @@
       .footer a { color: #b7fff6; }
       .footer small { color: #a9c8c5; }
 
+      /* Thumbnails row under intro */
+      .thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+      .thumb { aspect-ratio: 16/10; border-radius: 10px; overflow: hidden; border: 1px solid #e6ecea; box-shadow: 0 8px 18px rgba(15,23,42,.06); background: #fff; }
+      .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
 
       /* Mobile fixed CTA */
       .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(255,255,255,.95); backdrop-filter: blur(8px); border-top: 1px solid #e6ecea; padding: 10px 12px; display: none; }
@@ -105,7 +110,9 @@
         .cards { grid-template-columns: 1fr; }
         .hero .container { padding-left: 16px; padding-right: 16px; }
         .mobile-cta { display: block; }
+        .thumbs { grid-template-columns: repeat(2, 1fr); }
       }
+      @media (max-width: 520px) { .thumbs { grid-template-columns: 1fr; } }
     </style>
 
     <script type="application/ld+json">
@@ -170,14 +177,14 @@
         </div>
       </section>
 
-      <!-- Trust strip / placeholders for logos or images -->
+      <!-- Intro thumbnails (attached images) -->
       <section>
         <div class="container">
-          <div class="cards" style="grid-template-columns: repeat(4, 1fr);">
-            <div class="placeholder" aria-hidden="true"></div>
-            <div class="placeholder" aria-hidden="true"></div>
-            <div class="placeholder" aria-hidden="true"></div>
-            <div class="placeholder" aria-hidden="true"></div>
+          <div class="thumbs">
+            <div class="thumb"><img src="./image/E.jpg" alt="現地の子どもたちの様子 E" loading="lazy"></div>
+            <div class="thumb"><img src="./image/F.jpg" alt="現地の子どもたちの様子 F" loading="lazy"></div>
+            <div class="thumb"><img src="./image/B.jpg" alt="現地の子どもたちの様子 B" loading="lazy"></div>
+            <div class="thumb"><img src="./image/A.jpg" alt="現地の子どもたちの様子 A" loading="lazy"></div>
           </div>
         </div>
       </section>
