@@ -32,8 +32,8 @@
 
     <style>
       :root {
-        --brand:#106466; /* 深めのグリーン */
-        --brand-2:#28a197;
+        --brand:#c49a3a; /* ゴールド基調 */
+        --brand-2:#d6b15a;
         --cta:#e05a24; /* 落ち着いたオレンジ（CTA）*/
         --line:#00c300; /* LINEグリーン */
         --bg:#f5f6f7; /* 薄いグレーベース */
@@ -59,7 +59,7 @@
       .btn { display: inline-block; padding: 12px 18px; border-radius: 0; font-weight: 700; }
       .btn.primary { background: var(--cta); color: #fff; box-shadow: 0 6px 16px rgba(224,90,36,.22); border: 1px solid rgba(224,90,36,.38); border-radius: 12px; }
       .btn.line { background: var(--line); color: #fff; border: 1px solid rgba(0,195,0,.35); box-shadow: 0 6px 16px rgba(0,195,0,.2); }
-      .btn.ghost { color: var(--brand); border: 1px solid #cfe5e2; background: #fff; }
+      .btn.ghost { color: var(--brand); border: 1px solid #e5dcc4; background: #fff; }
       .btn:hover { opacity: .95; transform: translateY(-1px); transition: .2s ease; }
       .btn.block { display: flex; justify-content: center; width: 100%; }
 
@@ -80,29 +80,29 @@
       section { padding: 36px 0; }
       .section-title { font-size: 22px; margin: 0 0 12px; }
       .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-      .card { background: var(--card); border: 1px solid #e6ecea; border-radius: 0; padding: 18px; position: relative; overflow: hidden; }
+      .card { background: var(--card); border: 1px solid #ece7d6; border-radius: 0; padding: 18px; position: relative; overflow: hidden; }
       .card h3 { margin: 0 0 8px; font-size: 18px; }
       .muted { color: var(--muted); }
-      /* Featured plan styles */
-      .card.featured { border: 2px solid var(--brand); box-shadow: 0 10px 26px rgba(16,100,102,.18); position: relative; background: linear-gradient(180deg, #ffffff 0%, #f7fbfb 100%); }
+      /* Featured card styles (neutral/gold) */
+      .card.featured { border: 2px solid var(--brand); box-shadow: 0 10px 26px rgba(196,154,58,.18); position: relative; background: linear-gradient(180deg, #ffffff 0%, #f6f4ef 100%); }
       .card.featured h3 { font-size: 20px; }
-      .card.featured::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 0% 0%, rgba(16,100,102,.08), transparent 60%); pointer-events: none; }
+      .card.featured::before { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 80% at 0% 0%, rgba(196,154,58,.10), transparent 60%); pointer-events: none; }
       .card .price { font-weight: 800; font-size: 20px; color: var(--text); }
       .card .sub { font-size: 12px; color: var(--muted); }
-      .card:hover { box-shadow: 0 10px 26px rgba(16,100,102,.12); transform: translateY(-2px); transition: .2s ease; }
+      .card:hover { box-shadow: 0 10px 26px rgba(15,23,42,.12); transform: translateY(-2px); transition: .2s ease; }
       .nowrap { white-space: nowrap; }
-      .placeholder { height: 140px; background: repeating-linear-gradient(45deg, #eef7f5, #eef7f5 10px, #e3efec 10px, #e3efec 20px); border-radius: 0; margin: -6px -6px 12px; border: 1px dashed #cfe5e2; }
+      .placeholder { height: 140px; background: repeating-linear-gradient(45deg, #f6f6f6, #f6f6f6 10px, #efefef 10px, #efefef 20px); border-radius: 0; margin: -6px -6px 12px; border: 1px dashed #e7e1cf; }
 
-      .footer { background: #0f2526; color: #e6f3f1; padding: 24px 0; }
-      .footer a { color: #b7fff6; }
-      .footer small { color: #a9c8c5; }
+      .footer { background: #0f1114; color: #efece6; padding: 24px 0; }
+      .footer a { color: #d6b15a; }
+      .footer small { color: #b9b2a2; }
 
       /* Concept split (image left, text right) */
       .concept { padding: 56px 0; }
       .concept-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: clamp(16px,3vw,32px); align-items: center; }
       .concept-media { position: relative; }
       .concept-media .frame { position: relative; border-radius: 0; overflow: hidden; box-shadow: 0 20px 40px rgba(15,23,42,.12); aspect-ratio: 16/9; }
-      .concept-media .frame::before { content: ""; position: absolute; inset: -14px -14px -18px -18px; border-radius: 0; background: linear-gradient(180deg, rgba(15,23,42,.06), rgba(16,100,102,.05)); z-index: -1; }
+      .concept-media .frame::before { content: ""; position: absolute; inset: -14px -14px -18px -18px; border-radius: 0; background: linear-gradient(180deg, rgba(15,23,42,.06), rgba(212,180,117,.08)); z-index: -1; }
       .concept-media img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center; }
       .concept-copy { position: relative; padding: clamp(18px,2.6vw,24px); border-radius: 0; background: linear-gradient(180deg, rgba(255,255,255,.8), rgba(255,255,255,.64)); border: 1px solid rgba(15,23,42,.08); box-shadow: 0 10px 24px rgba(15,23,42,.06); backdrop-filter: blur(6px); max-width: clamp(520px, 48vw, 680px); }
       .concept-copy .section-title { font-size: clamp(24px,3.4vw,34px); margin: 0 0 14px; }
@@ -118,15 +118,15 @@
 
       /* Support plans (premium cards) */
       .support-plans .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-      .support-plans .plan { position: relative; padding: 18px; border: 1px solid transparent; background:
-        linear-gradient(180deg, #ffffff, #f7f7f8) padding-box,
-        linear-gradient(180deg, rgba(212,180,117,.45), rgba(212,180,117,.18)) border-box; /* subtle gold border */
-        box-shadow: 0 10px 26px rgba(15,23,42,.08);
+      .support-plans .plan { position: relative; padding: 22px; border: 1px solid transparent; background:
+        linear-gradient(180deg, #ffffff, #f6f6f7) padding-box,
+        linear-gradient(180deg, rgba(212,180,117,.70), rgba(212,180,117,.32)) border-box; /* emphasized gold border */
+        box-shadow: 0 12px 28px rgba(15,23,42,.10);
       }
       .support-plans .plan.featured { background:
-        linear-gradient(180deg, #ffffff 0%, #f6f4ef 100%) padding-box,
-        linear-gradient(180deg, rgba(224,190,120,.65), rgba(224,190,120,.28)) border-box; /* warmer gold */
-        box-shadow: 0 14px 34px rgba(15,23,42,.12);
+        linear-gradient(180deg, #ffffff 0%, #f3efe6 100%) padding-box,
+        linear-gradient(180deg, rgba(224,190,120,.90), rgba(224,190,120,.45)) border-box; /* stronger warm gold */
+        box-shadow: 0 18px 38px rgba(15,23,42,.14);
       }
       .support-plans .plan h3 { margin: 0 0 8px; font-size: 18px; }
       .support-plans .plan .price { font-weight: 800; font-size: 20px; color: var(--text); }
