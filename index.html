@@ -116,6 +116,25 @@
       .mobile-cta .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
       body.has-mobile-cta { padding-bottom: 74px; }
 
+      /* Support plans (premium cards) */
+      .support-plans .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      .support-plans .plan { position: relative; padding: 18px; border: 1px solid transparent; background:
+        linear-gradient(180deg, #ffffff, #f8fbfa) padding-box,
+        linear-gradient(180deg, rgba(16,100,102,.25), rgba(16,100,102,.05)) border-box; /* gradient border */
+        box-shadow: 0 10px 26px rgba(15,23,42,.08);
+      }
+      .support-plans .plan.featured { background:
+        linear-gradient(180deg, #ffffff 0%, #f4faf8 100%) padding-box,
+        linear-gradient(180deg, rgba(242,107,33,.55), rgba(16,100,102,.35)) border-box; /* warmer accent */
+        box-shadow: 0 14px 34px rgba(15,23,42,.12);
+      }
+      .support-plans .plan h3 { margin: 0 0 8px; font-size: 18px; }
+      .support-plans .plan .price { font-weight: 800; font-size: 20px; color: var(--text); }
+      .support-plans .plan .sub { font-size: 12px; color: var(--muted); }
+      .support-plans .note { color: var(--muted); }
+      .support-plans .plan:hover { box-shadow: 0 16px 36px rgba(15,23,42,.14); transform: translateY(-2px); transition: .25s ease; }
+      @media (max-width: 900px) { .support-plans .plans-grid { grid-template-columns: 1fr; } }
+
       @media (max-width: 900px) {
         .hero-inner { grid-template-columns: 1fr; }
         .cards { grid-template-columns: 1fr; }
@@ -232,38 +251,36 @@
         </div>
       </section>
 
-      <section>
+      <section class="support-plans">
         <div class="container">
           <h2 class="section-title">ご支援プラン</h2>
-          <div class="cards">
-            <div class="card featured">
+          <div class="plans-grid">
+            <div class="plan featured">
               <h3>トイレ入口壁面に名前や社名を刻む</h3>
               <p class="price">20万円 <span class="sub">（1口・限定2枠）</span></p>
               <p class="muted">サイズ：<span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
-            <div class="card featured">
+            <div class="plan featured">
               <h3>個室の壁面に名前や社名を刻む</h3>
               <p class="price">10万円 <span class="sub">（1口・限定6枠）</span></p>
               <p class="muted">サイズ：<span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
-            <div class="card">
+            <div class="plan">
               <h3>トイレの壁面に名前を刻む</h3>
               <p class="price">3万円 <span class="sub">（1口・限定50枠）</span></p>
               <p class="muted">サイズ：<span class="nowrap">5.0cm × 9.0cm</span>（4文字まで）</p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
-          </div>
-          <div class="cards" style="margin-top:16px">
-            <div class="card" style="grid-column: 1 / -1;">
+            <div class="plan">
               <h3>ジュリアス教育財団のHPに名前を掲載</h3>
               <p class="price">1,000円 <span class="sub">（1口・制限なし）</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
           </div>
-          <p class="muted" style="margin-top:8px">迷ったらお気軽に <a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEで相談</a> ください。</p>
-          <div class="card" style="margin-top:16px">
+          <p class="note" style="margin-top:8px">迷ったらお気軽に <a href="https://lin.ee/0VSSpfM" target="_blank" rel="noopener noreferrer">LINEで相談</a> ください。</p>
+          <div class="plan" style="margin-top:16px">
             <h3>共通特典・注意事項</h3>
             <ul class="muted" style="margin:8px 0 0 18px;">
               <li>共通：①HPに名前掲載 ②活動報告書PDF ③サンクスカード</li>
