@@ -71,6 +71,11 @@
       .card { background: var(--card); border: 1px solid #e6ecea; border-radius: 12px; padding: 18px; }
       .card h3 { margin: 0 0 8px; font-size: 18px; }
       .muted { color: var(--muted); }
+      /* Featured plan styles */
+      .card.featured { border-color: var(--brand); box-shadow: 0 8px 22px rgba(16,100,102,.18); position: relative; background: #ffffff; }
+      .card.featured h3 { font-size: 20px; }
+      .card .badge { position: absolute; top: 12px; right: 12px; background: var(--brand); color: #fff; font-weight: 700; font-size: 11px; padding: 4px 8px; border-radius: 999px; letter-spacing: .02em; }
+      .nowrap { white-space: nowrap; }
 
       .footer { background: #0f2526; color: #e6f3f1; padding: 24px 0; }
       .footer a { color: #b7fff6; }
@@ -162,19 +167,21 @@
         <div class="container">
           <h2 class="section-title">ご支援プラン</h2>
           <div class="cards">
-            <div class="card">
+            <div class="card featured">
+              <span class="badge">おすすめ</span>
               <h3>トイレ入口壁面に名前や社名を刻む</h3>
-              <p class="muted">1口：20万円（限定2枠）／ 30.48cm × 45.72cm</p>
+              <p class="muted">1口：20万円（限定2枠）／ <span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
-            <div class="card">
+            <div class="card featured">
+              <span class="badge">人気</span>
               <h3>個室の壁面に名前や社名を刻む</h3>
-              <p class="muted">1口：10万円（限定6枠）／ 30.48cm × 45.72cm</p>
+              <p class="muted">1口：10万円（限定6枠）／ <span class="nowrap">30.48cm × 45.72cm</span></p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
             <div class="card">
               <h3>トイレの壁面に名前を刻む</h3>
-              <p class="muted">1口：3万円（限定50枠）／ 5.0cm × 9.0cm（4文字まで）</p>
+              <p class="muted">1口：3万円（限定50枠）／ <span class="nowrap">5.0cm × 9.0cm</span>（4文字まで）</p>
               <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfuXlHdwhGby0VtGaig6_EOc3WV04StfSLM8UueqIwuqx2bnQ/viewform" target="_blank" rel="noopener noreferrer">このプランで支援する</a></p>
             </div>
           </div>
